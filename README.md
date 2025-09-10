@@ -81,20 +81,13 @@ weatherapp-frontend/
 ├── 📁 public/                 # Static assets
 ├── 📁 src/
 │   ├── 📁 assets/            # Images, icons, static files
-│   ├── 📁 components/        # Reusable UI components
-│   │   ├── WeatherCard.tsx
-│   │   ├── SearchBar.tsx
-│   │   └── LoadingSpinner.tsx
 │   ├── 📁 views/             # Page-level components
-│   │   ├── HomePage.tsx
-│   │   └── WeatherDetail.tsx
+│   │   ├── Dashboard.tsx
+│   │   └── Login.tsx
 │   ├── 📁 api/               # API calls and utilities
-│   │   ├── weatherApi.ts
-│   │   └── types.ts
-│   ├── 📁 hooks/             # Custom React hooks
-│   │   └── useWeather.ts
-│   ├── 📁 utils/             # Helper functions
-│   │   └── formatters.ts
+│   │   ├── weatherAPI.ts
+│   │   ├── authAPI.ts
+│   │   └── index.ts
 │   ├── 📄 App.tsx            # Main App component
 │   ├── 📄 main.tsx           # App entry point
 │   └── 📄 app.css            # Global styles
@@ -188,19 +181,6 @@ interface WeatherCardProps {
 npm run build
 ```
 
-### Deploy to Netlify
-
-1. Build the project
-2. Upload `dist` folder to Netlify
-3. Set environment variables in Netlify dashboard
-
-### Deploy to Vercel
-
-```bash
-npm install -g vercel
-vercel --prod
-```
-
 ## 🤝 Contributing
 
 We welcome contributions! Here's how you can help:
@@ -269,13 +249,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Supun Liyanage**
 - GitHub: [@SupunLiyanage88](https://github.com/SupunLiyanage88)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/your-profile)
-- Email: your.email@example.com
+- LinkedIn: [Supun Liyanage](www.linkedin.com/in/supun-liyanage-600790223)
+- Email: liyanageaupun10@gmail.com
 
 ## 🙏 Acknowledgments
 
 - Weather data provided by [OpenWeatherMap API](https://openweathermap.org/api)
-- Icons from [React Icons](https://react-icons.github.io/react-icons/)
 - UI inspiration from [Dribbble](https://dribbble.com/)
 
 ## ⭐ Star History
