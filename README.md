@@ -18,10 +18,6 @@ A modern, responsive, and interactive weather application frontend built with Re
 - 🔒 **Type Safety** - Full TypeScript integration for better developer experience
 - 🎯 **Interactive Components** - Dynamic weather cards with engaging user interactions
 
-## 🚀 Demo
-
-*Live Demo: [weatherapp-demo.netlify.app](https://your-demo-link.com)*
-
 ## 🛠️ Tech Stack
 
 | Technology | Version | Purpose |
