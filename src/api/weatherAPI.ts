@@ -1,3 +1,4 @@
+// weatherAPI.ts
 import axios from "axios";
 
 export interface WeatherData {
@@ -6,7 +7,6 @@ export interface WeatherData {
   temp: number;
 }
 
-// City list
 export const cities = [
   { CityCode: "1248991", CityName: "Colombo" },
   { CityCode: "1850147", CityName: "Tokyo" },
@@ -18,34 +18,32 @@ export const cities = [
   { CityCode: "3143244", CityName: "Oslo" },
 ];
 
-const BASE_URL = "http://localhost:8080/api/weather";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL + "/weather";
 
-/**
- * Fetch weather data for a city by its ID
- * @param cityId CityCode from cities list
- * @returns WeatherData
- */
-export const getWeather = async (cityId: string): Promise<WeatherData> => {
-  try {
-    const response = await axios.get<WeatherData>(`${BASE_URL}/${cityId}`);
-    return response.data;
-  } catch (error) {
-    console.error("Error fetching weather data:", error);
-    throw error;
-  }
+
+// Helper to get auth headers
+const authHeaders = () => {
+  const token = localStorage.getItem("token"); // make sure you save it after login
+  return {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
 };
 
-/**
- * Fetch weather data for all cities
- */
-export const getAllWeather = async (): Promise<WeatherData[]> => {
+export const getWeather = async (cityId: string) => {
+  const response = await axios.get(`${BASE_URL}/${cityId}`, authHeaders());
+  return response.data as WeatherData;
+};
+
+export const getAllWeather = async () => {
   const results: WeatherData[] = [];
   for (const city of cities) {
     try {
       const data = await getWeather(city.CityCode);
       results.push(data);
     } catch (e) {
-      console.warn(`Failed to fetch weather for ${city.CityName}`);
+      console.warn(`Failed to fetch weather for ${city.CityName}`, e);
     }
   }
   return results;
