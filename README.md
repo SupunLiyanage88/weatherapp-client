@@ -257,10 +257,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Weather data provided by [OpenWeatherMap API](https://openweathermap.org/api)
 - UI inspiration from [Dribbble](https://dribbble.com/)
 
-## ⭐ Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=SupunLiyanage88/weatherapp-client&type=Date)](https://star-history.com/#SupunLiyanage88/weatherapp-client&Date)
-
 ---
 
 <div align="center">
