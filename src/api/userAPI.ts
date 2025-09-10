@@ -3,11 +3,11 @@
 import axios from "axios";
 
 // Base URL for your backend
-const API_URL = "http://localhost:8080/api/auth"; // adjust if backend runs elsewhere
+const BASE_URL = import.meta.env.VITE_API_BASE_URL + "/auth";
 
 // Create Axios instance
 const api = axios.create({
-  baseURL: API_URL,
+  baseURL: BASE_URL,
   headers: {
     "Content-Type": "application/json",
   },
